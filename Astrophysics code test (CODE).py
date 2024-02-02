@@ -7,14 +7,14 @@ import photoutils as photo
 from matplotlib.colors import LogNorm
 #from astropy.wcs.utils import pixel_to_skycoord
 
-Star = fits.open('Star(1).fits') #python reads fits file 
+Star = fits.open('Star(0).fits') #python reads fits file 
 
 Header = (Star[0].header) #mak the header a varibale to use in loop 
 
 # for item in Header :
 #     print (item, Header[item]) #prints all the items in the header 
 
-# plt.imshow(Star[0].data , origin = 'lower')  #creates image 
+plt.imshow(Star[0].data , origin = 'lower')  #creates image 
 # plt.scatter (5 , 5)    # adds a blue point at the (5, 5) coordinates
 
 # Image = Star[0].data # adds the image to a variable
@@ -43,6 +43,9 @@ Value = wcs.WCS(Star[0].header)
 print(Value.wcs.name)
 Value.wcs.print_contents()
 
-pixcrd = np.array([[0, 0], [24, 38], [45, 98]], dtype=np.float32)
+pixcrd = np.array([[0, 0], [15, 15], [31, 31]], dtype=np.float32)
 world = Value.wcs_pix2world(pixcrd , 0)
-print(world)
+print("these are the coords" , world)
+
+plt.scatter( 0, 0)
+plt.show()
