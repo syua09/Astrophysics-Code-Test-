@@ -21,8 +21,7 @@ plt.scatter(x , y)
 plt.plot(x , y)
 
 
-# for i in range (29) :
-#     plt.scatter(i, Row_15)
+
 
     
 
